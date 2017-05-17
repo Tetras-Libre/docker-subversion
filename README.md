@@ -1,6 +1,28 @@
 # build
 
-	docker build -t="rkrx/subversion" .
+	docker build -t="tetras-libre/subversion" .
+
+# Prepare
+
+Create the volumes
+
+    mkdir -p /srv/subversion/data/repos
+    mkdir -p /srv/subversion/conf
+
+create a authz file `/srv/subversion/conf/svn-access` :
+
+    [groups]
+    admin = me
+    
+    [/]
+    @me = rw
+    * = r
+    
+
+and a htpasswd file `/srv/subversion/conf/svn-password` :
+
+    htpasswd -c /srv/subversion/conf/svn-password me
+
 
 # run
 
