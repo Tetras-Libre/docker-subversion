@@ -13,11 +13,10 @@ create a authz file `/srv/subversion/conf/svn-access` :
 
     [groups]
     admin = me
-    
+
     [/]
     @me = rw
     * = r
-    
 
 and a htpasswd file `/srv/subversion/conf/svn-password` :
 
