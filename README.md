@@ -27,6 +27,11 @@ and a htpasswd file `/srv/subversion/conf/svn-password` :
 
 	docker run --name subversion -d -p 80:80 -v /srv/subversion/data:/var/svn -v /srv/subversion/conf:/etc/svn rkrx/subversion
 
+# Create a repository
+
+    svnadmin create /srv/subversion/data/repos/<my-repo>
+    chown -R www-data:www-data /srv/subversion/data
+
 # cleanup
 
 	docker kill subversion
